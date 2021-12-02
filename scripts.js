@@ -61,11 +61,13 @@ class Sinif {
                 else{
                     kisiler.kisilernot(...sinifogrencilerifilter,not);
                 }
-            } 
             }
-        catch (err) {  //burası çalışmıyor
-            console.log('Sadece 0-100 arası girebilirsiniz.');
-            //throw "Sadece 0-100 arası girebilirsiniz";
+            else{
+                throw Error; 
+            }
+            }
+        catch (Error) {  
+            throw 'Sadece 0-100 arası girebilirsiniz.';
         }
     }
     ortalama(){
@@ -102,7 +104,7 @@ class Sinif {
   const sinif = new Sinif();
   sinif.kayit('Cagdas');
   sinif.kayit('Cagil');
-  sinif.notver('Cagil',120)
+  sinif.notver('Cagil',20)
   sinif.kayit('alp');
   sinif.notver('alp',30)
   sinif.notver('Cagdas',40)
@@ -110,7 +112,7 @@ class Sinif {
   sinif.kayit('test');
   sinif.notver('test',100)
   sinif.kayit('Cagil');
-  sinif.notver('Cagil',80)
+  //sinif.notver('Cagil',120)
   console.log(Sinifogrencileri);
   sinif.ortalama();
   sinif.enbasarili();
